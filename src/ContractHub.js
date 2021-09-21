@@ -42,7 +42,7 @@ const NETWORKS = [
 ];
 
 // const DEFAULT_CONTRACT = "cx69bcdf1753472c1444188ec3f5188657e30c8322"; // broof
-const DEFAULT_CONTRACT = "cxd47f7d943ad76a0403210501dab03d4daf1f6864"; // iconbet
+const DEFAULT_CONTRACT = "cx57d7acf8b5114b787ecdd99ca460c2272e4d9135"; // Planet contract
 
 const ContractHubContext = React.createContext();
 HeaderSection.contextType = ContractHubContext;
