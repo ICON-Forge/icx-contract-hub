@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import { IconApi } from "../../chainApi/IconApi.js";
-import { ChainalyticApi } from "../../chainApi/ChainalyticApi.js";
+// import { ChainalyticApi } from "../../chainApi/ChainalyticApi.js";
 import { HorizonalSeparator } from "../../common/Util";
 import "./HeaderSection.css";
 
@@ -114,41 +114,42 @@ function ChainalyticInfo(props) {
     height: "Fetching height...",
   });
 
-  useEffect(() => {
-    const chainalyticApi = new ChainalyticApi(
-      props.network.chainalytic_endpoint
-    );
+  // useEffect(() => {
+  //   const chainalyticApi = new ChainalyticApi(
+  //     props.network.chainalytic_endpoint
+  //   );
 
-    const interval = setInterval(async () => {
-      const result = await chainalyticApi.lastBlockHeight("contract_history");
-      const height = result ? result.result.toLocaleString() : "Unknown height";
-      setState({ height: height });
-      // console.log(`Chainalytic height: ${height}`);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [props.network.chainalytic_endpoint]);
+  //   const interval = setInterval(async () => {
+  //     const result = await chainalyticApi.lastBlockHeight("contract_history");
+  //     const height = result ? result.result.toLocaleString() : "Unknown height";
+  //     setState({ height: height });
+  //     // console.log(`Chainalytic height: ${height}`);
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, [props.network.chainalytic_endpoint]);
 
-  return (
-    <div className="row align-items-center justify-content-end chainalytic-info">
-      <div className="col-auto">
-        <b>{state.height}</b> | Chainalytic
-      </div>
-      <div className="col">
-        <input
-          type="text"
-          className="form-control endpoint-input"
-          value={props.network.chainalytic_endpoint}
-          onChange={(e) => {
-            const network = props.network;
-            network.chainalytic_endpoint = e.target.value;
-            props.handleNetworkChange(network);
-          }}
-          required={true}
-          placeholder="Chainalytic endpoint here"
-        />
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="row align-items-center justify-content-end chainalytic-info">
+  //     <div className="col-auto">
+  //       <b>{state.height}</b> | Chainalytic
+  //     </div>
+  //     <div className="col">
+  //       <input
+  //         type="text"
+  //         className="form-control endpoint-input"
+  //         value={props.network.chainalytic_endpoint}
+  //         onChange={(e) => {
+  //           const network = props.network;
+  //           network.chainalytic_endpoint = e.target.value;
+  //           props.handleNetworkChange(network);
+  //         }}
+  //         required={true}
+  //         placeholder="Chainalytic endpoint here"
+  //       />
+  //     </div>
+  //   </div>
+  // );
+  return (<div></div>)
 }
 ChainalyticInfo.propTypes = {
   network: PropTypes.object,
